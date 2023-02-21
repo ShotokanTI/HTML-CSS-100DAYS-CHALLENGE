@@ -1,0 +1,91 @@
+.first-bar {
+  animation: menuTopToDown 0.7s cubic-bezier(0.3, 1, 0.7, 1) forwards;
+}
+
+.second-bar {
+  animation: hidden 0.7s cubic-bezier(0.3, 1, 0.7, 1) forwards;
+}
+
+.third-bar {
+  animation: menuDownToTop 0.7s cubic-bezier(0.3, 1, 0.7, 1) forwards;
+}
+
+.first-bar-reverse {
+  animation: menuTopToDownReverse 0.7s  ease-in-out;
+}
+
+.second-bar-reverse {
+  animation: hiddenReverse 0.7s  ease-in-out;
+}
+
+.third-bar-reverse {
+  animation: menuDownToTopReverse 0.7s  ease-in-out;
+}
+
+@keyframes menuTopToDown {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, 25px, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(0, 25px, 0) rotate(45deg);
+  }
+}
+@keyframes menuTopToDownReverse {
+  0% {
+      transform: translate3d(0, 25px, 0) rotate(45deg);
+    }
+    50% {
+        transform: translate3d(0, 25px, 0) rotate(0deg);
+    }
+    100% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+@keyframes hidden {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes hiddenReverse {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes menuDownToTop {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -25px, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(0, -25px, 0) rotate(135deg);
+  }
+}
+@keyframes menuDownToTopReverse {
+  0% {
+    transform: translate3d(0, -25px, 0) rotate(135deg);
+  }
+  50% {
+    transform: translate3d(0, -25px, 0) rotate(0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}

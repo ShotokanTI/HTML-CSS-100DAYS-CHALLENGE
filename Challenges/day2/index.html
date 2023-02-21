@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2</title>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="animation.css">
+</head>
+<body>
+        <div class="container-menu">
+            <div class="container-bar">
+                <div class="content-bar">
+                    <div class="bar-menu"></div>
+                    <div class="bar-menu"></div>
+                    <div class="bar-menu"></div>
+                </div>
+            </div>
+    </div>
+
+    <script>
+        const barMenu = document.querySelectorAll('.bar-menu')
+        const classAnimations = ['first-bar','second-bar','third-bar']
+        const classAnimationsReverse = ['first-bar-reverse','second-bar-reverse','third-bar-reverse']
+        const containerMenu = document.querySelector('.content-bar')
+        containerMenu.addEventListener('click',(e) => {
+            barMenu.forEach((element,i) => {
+                if(Object.values(element.classList).includes(classAnimations[i]) && Object.values(element.classList).includes(classAnimationsReverse[i]))
+                element.classList.remove(...classAnimationsReverse.concat(classAnimations))
+                
+                if(Object.values(element.classList).includes(classAnimations[i])){
+                    element.classList.add(classAnimationsReverse[i])
+                }else{
+                    element.classList.add(classAnimations[i])
+                }
+            })
+        })
+    </script>
+</body>
+</html>
